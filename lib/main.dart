@@ -23,13 +23,37 @@ class _MyWidgetState extends State<MyWidget> {
             children: [
               Text("atelier 04 - statefulwidget de zakaria"),
               Text("la valeur du compteur est $compteur"),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    compteur++;
-                  });
-                },
-                child: Text("incrementer"),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur--;
+                      });
+                    },
+                    child: Text("-"),
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur = 0;
+                      });
+                    },
+                    child: Text("reinitialiser"),
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur++;
+                      });
+                    },
+                    child: Text("+"),
+                  ),
+                ],
               ),
             ],
           ),
